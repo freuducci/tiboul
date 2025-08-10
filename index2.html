@@ -153,43 +153,75 @@
         </div>
     </header>
 
-    <main class="min-h-screen flex items-center justify-center px-6 py-24">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <main class="min-h-screen flex items-center justify-center px-4 py-24">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center place-items-center">
             <!-- Hero Content -->
-            <div class="text-center md:text-left">
-                <h1 class="text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
+            <div class="text-center lg:text-left space-y-4 md:space-y-6">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Ti Boul
                 </h1>
-                <p class="text-2xl text-white/80 mb-8">Platform gaming #1 an Ayiti</p>
-                <p class="text-white/60 mb-8">Chwazi jwèt ou vle jwe epi kòmanse avni ou!</p>
+                <p class="text-2xl sm:text-3xl text-white/90 font-light">Platform Gaming #1 an Ayiti</p>
+                
+                <!-- condensed badges & stats -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-sm text-white/70">
+                    <span>50k+ manm</span>
+                    <span>₵10M+ ganyan</span>
+                    <span>4.9★</span>
+                    <span>5 min retrè</span>
+                </div>
+
+                <button class="btn px-8 py-3 md:px-10 md:py-4 text-base md:text-lg">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Kreye Kont Gratis
+                </button>
+
+                <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                    <span class="text-xs bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">MonCash & Digicel</span>
+                    <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Retrè 5 min</span>
+                    <span class="text-xs bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full">Bonus 100%</span>
+                </div>
             </div>
 
-            <!-- Game Cards Grid -->
-            <div class="grid gap-6">
+            <!-- Enhanced Game Cards Grid -->
+            <div class="w-full max-w-sm sm:max-w-md mx-auto space-y-6">
                 <!-- Borlette Card -->
-                <div id="hero-card" class="card hover:scale-105 transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-5xl mr-4">🎲</div>
+                <div id="hero-card" class="card hover:scale-105 transition-all duration-300 w-full">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl md:text-6xl mr-4">🎲</div>
                         <div>
-                            <h2 class="text-2xl font-bold text-cyan-300">Borlette</h2>
-                            <p class="text-white/70 text-sm">Loto tradisyonèl</p>
+                            <h2 class="text-2xl md:text-3xl font-bold text-cyan-300">Borlette</h2>
+                            <p class="text-white/70 text-sm">Loto tradisyonèl ak modèn</p>
                         </div>
                     </div>
-                    <p class="text-white/80 mb-4">Mete chans ou a tès ak tout boul favori ou yo</p>
-                    <button class="btn w-full">Jwè Borlette</button>
+                    <div class="space-y-3 mb-6">
+                        <p class="text-white/80">• Tiraj chak 5 minit</p>
+                        <p class="text-white/80">• 10+ kalite borlette</p>
+                        <p class="text-white/80">• Jackpot ₵500,000+</p>
+                    </div>
+                    <button class="btn w-full">
+                        <i class="fas fa-play mr-2"></i>
+                        Kòmanse Jwe Borlette
+                    </button>
                 </div>
 
                 <!-- Betting Card -->
-                <div id="hero-card-2" class="card hover:scale-105 transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="text-5xl mr-4">⚽</div>
+                <div id="hero-card-2" class="card hover:scale-105 transition-all duration-300 w-full">
+                    <div class="flex items-center mb-6">
+                        <div class="text-5xl md:text-6xl mr-4">⚽</div>
                         <div>
-                            <h2 class="text-2xl font-bold text-purple-400">Paryaj Espò</h2>
-                            <p class="text-white/70 text-sm">Tout lig major</p>
+                            <h2 class="text-2xl md:text-3xl font-bold text-purple-400">Paryaj Espò</h2>
+                            <p class="text-white/70 text-sm">Tout lig & sports sou mòn lan</p>
                         </div>
                     </div>
-                    <p class="text-white/80 mb-4">Parye sou match yo ak live betting</p>
-                    <button class="btn w-full">Parye Koulye</button>
+                    <div class="space-y-3 mb-6">
+                        <p class="text-white/80">• 1000+ match chak jou</p>
+                        <p class="text-white/80">• Live betting an tan reyèl</p>
+                        <p class="text-white/80">• Cashout disponib</p>
+                    </div>
+                    <button class="btn w-full">
+                        <i class="fas fa-futbol mr-2"></i>
+                        Parye Sou Match Yo
+                    </button>
                 </div>
             </div>
         </div>
