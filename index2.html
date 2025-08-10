@@ -9,40 +9,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root{
-            --brand:#00FFFF;
-            --brand-light:#7BFFFF;
-            --brand-gold:#FF00FF;
+            --brand:#F27200;          /* apricot orange */
+            --brand-light:#F27200;   /* apricot orange */
+            --brand-gold:#FFFFFF;     /* white */
         }
         *{box-sizing:border-box;font-family:'Poppins',sans-serif;}
         body{
-            background:#0a0a0a;
+            background:#000000;
             min-height:100vh;
             overflow-x:hidden;
             scroll-behavior:smooth;
-            color:#fff;
+            color:#FFFFFF;
         }
-        /* animated grid background */
+        /* animated aurora background */
         body::before{
             content:'';
             position:fixed;
             inset:0;
             background:
-                linear-gradient(rgba(0,255,255,.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,255,255,.05) 1px, transparent 1px);
-            background-size:40px 40px;
-            z-index:-2;
-            animation:grid 20s linear infinite;
-        }
-        @keyframes grid{
-            0% {transform:translate(0);}
-            100% {transform:translate(40px,40px);}
+                radial-gradient(circle at 10% 20%, #000000 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, #000000 0%, transparent 40%),
+                conic-gradient(from 0deg at 50% 50%, #000000 0deg, #000000 60deg, #000000 120deg, #000000 180deg, #000000 240deg, #000000 300deg, #000000 360deg);
+            z-index:-3;
         }
         body::after{
             content:'';
             position:fixed;
             inset:0;
-            background:radial-gradient(circle at 50% 50%,rgba(0,255,255,.15) 0%, transparent 70%);
-            z-index:-1;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(242,114,0,.03) 2px,
+                    rgba(242,114,0,.03) 4px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255,255,255,.02) 2px,
+                    rgba(255,255,255,.02) 4px
+                ),
+                radial-gradient(circle at 50% 50%, rgba(242,114,0,.08) 0%, transparent 60%);
+            z-index:-2;
+            animation: drift 40s linear infinite;
+            mix-blend-mode: screen;
+        }
+        @keyframes drift{
+            0% {transform:translate(0,0) scale(1) rotate(0deg);}
+            50% {transform:translate(-5%,5%) scale(1.1) rotate(180deg);}
+            100% {transform:translate(0,0) scale(1) rotate(360deg);}
         }
 
         /* holographic card */
@@ -51,27 +68,27 @@
             width:320px;
             padding:2.5rem;
             border-radius:30px;
-            background:rgba(255,255,255,.03);
-            border:1px solid rgba(0,255,255,.3);
+            background:rgba(0,0,0,.5);
+            border:1px solid rgba(242,114,0,.5);
             backdrop-filter:blur(30px);
             box-shadow:
-                0 0 20px rgba(0,255,255,.5),
-                inset 0 0 20px rgba(0,255,255,.05);
+                0 0 20px rgba(242,114,0,.7),
+                inset 0 0 20px rgba(242,114,0,.1);
             transform-style:preserve-3d;
             transition:.6s;
         }
         .card:hover{
             transform:rotateY(8deg) rotateX(-5deg) scale(1.05);
             box-shadow:
-                0 0 30px rgba(0,255,255,.8),
-                inset 0 0 30px rgba(0,255,255,.1);
+                0 0 40px rgba(242,114,0,1),
+                inset 0 0 40px rgba(242,114,0,.2);
         }
         .card::before{
             content:'';
             position:absolute;
             inset:0;
             border-radius:30px;
-            background:conic-gradient(from 0deg at 50% 50%, #00FFFF20, #FF00FF20, #00FFFF20);
+            background:conic-gradient(from 0deg at 50% 50%, rgba(242,114,0,0.125), rgba(255,255,255,0.125), rgba(242,114,0,0.125));
             animation:spin 6s linear infinite;
             z-index:-1;
         }
@@ -86,23 +103,25 @@
             padding:.9rem 2rem;
             border:none;
             border-radius:50px;
-            background:linear-gradient(135deg,#00FFFF,#7BFFFF);
-            color:#0a0a0a;
+            background:#F27200;
+            color:#000000;
             font-weight:700;
             cursor:pointer;
             overflow:hidden;
             box-shadow:
-                0 0 10px rgba(0,255,255,.7),
-                0 0 20px rgba(0,255,255,.5),
-                0 0 30px rgba(0,255,255,.3);
+                0 0 15px rgba(242,114,0,.8),
+                0 0 30px rgba(242,114,0,.6),
+                0 0 45px rgba(242,114,0,.4);
             transition:.4s;
         }
         .btn:hover{
             transform:scale(1.05);
+            background:#FFFFFF;
+            color:#F27200;
             box-shadow:
-                0 0 15px rgba(0,255,255,1),
-                0 0 30px rgba(0,255,255,.8),
-                0 0 45px rgba(0,255,255,.6);
+                0 0 20px rgba(242,114,0,1),
+                0 0 40px rgba(242,114,0,.8),
+                0 0 60px rgba(242,114,0,.6);
         }
         .btn::before{
             content:'';
@@ -119,10 +138,10 @@
         /* particles */
         .particle{
             position:absolute;
-            width:2px;height:2px;
-            background:#00FFFF;
+            width:3px;height:3px;
+            background:#F27200;
             border-radius:50%;
-            box-shadow:0 0 10px #00FFFF,0 0 20px #00FFFF;
+            box-shadow:0 0 15px #F27200,0 0 25px #F27200;
             animation:float 6s ease-in-out infinite;
             pointer-events:none;
         }
@@ -157,7 +176,7 @@
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center place-items-center">
             <!-- Hero Content -->
             <div class="text-center lg:text-left space-y-4 md:space-y-6">
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">
                     Ti Boul
                 </h1>
                 <p class="text-2xl sm:text-3xl text-white/90 font-light">Platform Gaming #1 an Ayiti</p>
@@ -176,9 +195,9 @@
                 </button>
 
                 <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
-                    <span class="text-xs bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">MonCash & Digicel</span>
-                    <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">Retrè 5 min</span>
-                    <span class="text-xs bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full">Bonus 100%</span>
+                    <span class="text-xs bg-[#F27200]/20 text-[#F27200] px-3 py-1 rounded-full">MonCash & Digicel</span>
+                    <span class="text-xs bg-[#FFFFFF]/20 text-[#FFFFFF] px-3 py-1 rounded-full">Retrè 5 min</span>
+                    <span class="text-xs bg-[#F27200]/20 text-[#F27200] px-3 py-1 rounded-full">Bonus 100%</span>
                 </div>
             </div>
 
@@ -189,7 +208,7 @@
                     <div class="flex items-center mb-6">
                         <div class="text-5xl md:text-6xl mr-4">🎲</div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-cyan-300">Borlette</h2>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Borlette</h2>
                             <p class="text-white/70 text-sm">Loto tradisyonèl ak modèn</p>
                         </div>
                     </div>
@@ -209,7 +228,7 @@
                     <div class="flex items-center mb-6">
                         <div class="text-5xl md:text-6xl mr-4">⚽</div>
                         <div>
-                            <h2 class="text-2xl md:text-3xl font-bold text-purple-400">Paryaj Espò</h2>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Paryaj Espò</h2>
                             <p class="text-white/70 text-sm">Tout lig & sports sou mòn lan</p>
                         </div>
                     </div>
